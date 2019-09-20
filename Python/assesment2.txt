@@ -1,0 +1,60 @@
+1) Write a Python program to combine each line from first file with the corresponding line in second file
+with open('file1.txt','r') as f1:
+	with open('file2.txt','r') as f2:
+		for i ,j in zip(f1,f2):
+			print(i+j)
+
+2)Count new lines in file
+
+with open('file1.txt','r') as f1:
+		print(len(f1.readlines()))
+
+
+
+3)def count(string):
+	upper = 0
+	lower=0
+	
+	for i in string:
+		if(i.isUpper()):
+			upper+=1
+		elif(i.isLower()):
+			lower+=1
+
+	return upper,lower
+upper,lower=count('SeLvIn')
+print('No. of Upper case characters',upper)
+print('No. of lower case characters',lower)
+
+
+4) def unique(list1):
+	new_list=[]
+	for i in list1:
+		if i not in new_list:
+			new_list.append(i)
+	print(new_list)
+
+list1=[1,2,3,3,3,3,4,5]
+unique(list)
+
+5)from string import *
+def panagram(string):
+	string = str.lower()
+	letters='abcdefghijklmnopqrstuvxyz'
+	for letter in letters:
+		if letter not in string:
+			return False
+
+	return True
+
+string="selvin joseph"
+if(panagram(string)):
+	print("anagram")
+else:
+	print("not a anagram")
+
+6) string = input("enter comma string")
+word_list = [word for word in string.split("-")]
+word_list.sort()
+print('-'.join(word_list))
+			 
